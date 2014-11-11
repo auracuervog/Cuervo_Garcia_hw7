@@ -1,4 +1,4 @@
-rho=10.00
+rho=15.00
 
 all: string_$(rho).pdf
 
