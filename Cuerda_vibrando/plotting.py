@@ -7,19 +7,20 @@ filename = sys.argv[1]
 newfilename = filename[0:11]
 datos = np.loadtxt(filename)
 z = datos;
+
 print z.shape
 
-nt, nx = 101, 1201
-X = range(nt)
-Y = range(nx)
+nx, nt = 101, 1201
+X = range(nx)
+Y = range(nt)
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
 X, Y = np.meshgrid(X, Y) 
 ax.plot_surface(X, Y, z)
-ax.set_xlabel('t(s)')
-ax.set_ylabel('x(m)')
+ax.set_xlabel('x(m)')
+ax.set_ylabel('t(s)')
 ax.set_zlabel('y(m)')
 
 plt.savefig(newfilename + '.pdf',format = 'pdf', transparent=True)
